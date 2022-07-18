@@ -17,7 +17,7 @@ def cars_create():
     price = Decimal(input('Введите цену авто:  '))
     price = price.quantize(Decimal("1.00"))
 
-    Cars(brand, model, year, volume, color, kuzov, milleage, price)
+    Cars(brand, model, year, volume, color, body_types, milleage, price)
     return 'Авто успешно создано'
 
 def cars_listing():
@@ -31,7 +31,7 @@ def cars_retrieve(_id):
     list_ = []
     for car in Cars.objects:
         list_.append({'Марка':str(car.mark), 'Модель':str(car.model), 'Год выпуска':str(car.year), 'Объем двигателя':str(car.volume), 'Цвет':str(car.color), 'Тип кузова':str(car.type_), 'Пробег авто':str(car.prob), 'Стоимость':str(car.price)})
-    print(list_[_id])
+    print(list_[-_id])
 
 def cars_update(_id):
     car = Cars.objects[_id]
