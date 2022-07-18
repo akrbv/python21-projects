@@ -41,7 +41,7 @@ def cars_update(_id):
         value = input(f"{field} = ")
         if field == 'type_':
             if value not in Cars.body_types:
-                raise Exception(f'Введите верный тип! {Cars.body_types}')
+                raise Exception(f'Введите верный тип кузова! {Cars.body_types}')
         setattr(car, field, value)
     else:
         raise Exception(f"Поля {field} не cуществует!")
