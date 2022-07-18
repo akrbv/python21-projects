@@ -40,16 +40,12 @@ def cars_update(_id):
         print(f"old value: {getattr(car, field)}")
         value = input(f"{field} = ")
         if field == 'type_':
-            if value not in Cars.type_kuz:
-                raise Exception(f'Введите верный тип! {Cars.type_kuz}')
+            if value not in Cars.body_types:
+                raise Exception(f'Введите верный тип! {Cars.body_types}')
         setattr(car, field, value)
     else:
         raise Exception(f"Поля {field} не cуществует!")
-    cars_listing()
-    list_ = []
-    for car in Cars.objects:
-        list_.append({'Марка':str(car.mark), 'Модель':str(car.model), 'Год выпуска':str(car.year), 'Объем двигателя':str(car.volume), 'Цвет':str(car.color), 'Тип кузова':str(car.type_), 'Пробег авто':str(car.prob), 'Стоимость':str(car.price)})
-
+   
 def cars_delete(_id):
     car = Cars.objects[_id]
     Cars.objects.remove(car)
