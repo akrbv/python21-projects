@@ -50,4 +50,3 @@ def cars_delete(_id):
     car = Cars.objects[_id]
     Cars.objects.remove(car)
     print('Авто успешно удалено!')
-    cars_listing()
