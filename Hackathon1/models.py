@@ -1,7 +1,7 @@
 class Cars:
     objects = []
     _id = 0
-    type_kuz = ['седан', 'универсал. купе', 'хэтчбек', 'минивен', 'внедорожник', 'пикап']
+    body_type = ['седан', 'универсал. купе', 'хэтчбек', 'минивен', 'внедорожник', 'пикап']
     def __init__(self, mark, model, year, volume, color, type_, prob, price):
         self.mark = mark
         self.model = model
@@ -10,7 +10,7 @@ class Cars:
         self.color = color
         self.prob = prob
         self.price = price
-        if type_ in Cars.type_kuz:
+        if type_ in Cars.body_type:
             self.type_ = type_
         else:
             raise Exception('Выберите тип кузова из предложенных вариантов:) ')
